@@ -9,7 +9,7 @@ class MyRouter{
       case '/':
         return MaterialPageRoute(builder: (context) => const LoginPage());
       case '/home':
-        return MaterialPageRoute(builder: (context) => HomePage());
+        return MaterialPageRoute(builder: (context) => HomePage(number: (arg as int),));
     }
   }
 }

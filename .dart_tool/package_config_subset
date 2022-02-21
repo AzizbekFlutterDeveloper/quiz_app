@@ -18,6 +18,10 @@ async
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.2/
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.2/lib/
+auto_size_text
+2.12
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/auto_size_text-3.0.0/
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/auto_size_text-3.0.0/lib/
 boolean_selector
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/
@@ -66,6 +70,10 @@ checked_yaml
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/checked_yaml-2.0.1/
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/checked_yaml-2.0.1/lib/
+circle_checkbox
+2.12
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/circle_checkbox-0.0.2+1/
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/circle_checkbox-0.0.2+1/lib/
 cli_util
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/cli_util-0.3.5/
@@ -186,6 +194,10 @@ mime
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/mime-1.0.1/
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/mime-1.0.1/lib/
+nested
+2.12
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0/
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0/lib/
 package_config
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/package_config-2.0.2/
@@ -238,6 +250,10 @@ process
 2.14
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/process-4.2.4/
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/process-4.2.4/lib/
+provider
+2.12
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.2/
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.2/lib/
 pub_semver
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/pub_semver-2.1.0/
@@ -254,6 +270,10 @@ shelf_web_socket
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/shelf_web_socket-1.0.1/
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/shelf_web_socket-1.0.1/lib/
+simple_animations
+2.14
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/simple_animations-4.0.1/
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/simple_animations-4.0.1/lib/
 simple_timer
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/simple_timer-2.0.0/

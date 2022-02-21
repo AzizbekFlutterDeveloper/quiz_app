@@ -1,7 +1,8 @@
-import 'dart:ui';
 
 import 'package:app/core/contanier_consts.dart';
+import 'package:app/provider/page_second_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -9,6 +10,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    int son = context.watch<PageParovider>().index;
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
@@ -81,7 +83,8 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               onTap: (){
-                Navigator.pushNamed(context, '/home');
+                Navigator.pushNamed(context, '/home', arguments: son );
+                
               }
             ),
             SizedBox(

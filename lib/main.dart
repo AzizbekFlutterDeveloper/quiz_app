@@ -1,13 +1,28 @@
+import 'package:app/provider/checkbox_provider.dart';
+import 'package:app/provider/page_second_provider.dart';
 import 'package:app/router/my_router.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => CheckBoxProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => PageParovider(),
+        ),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
-  
+
   final _forRoute = MyRouter();
   @override
   Widget build(BuildContext context) {
