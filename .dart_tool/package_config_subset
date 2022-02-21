@@ -70,10 +70,6 @@ checked_yaml
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/checked_yaml-2.0.1/
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/checked_yaml-2.0.1/lib/
-circle_checkbox
-2.12
-file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/circle_checkbox-0.0.2+1/
-file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/circle_checkbox-0.0.2+1/lib/
 cli_util
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/cli_util-0.3.5/
@@ -234,6 +230,10 @@ path_provider_windows
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.5/
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.5/lib/
+percent_indicator
+2.12
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/percent_indicator-4.0.0/
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/percent_indicator-4.0.0/lib/
 platform
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/platform-3.1.0/

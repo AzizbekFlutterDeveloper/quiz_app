@@ -120,13 +120,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
-  circle_checkbox:
-    dependency: "direct main"
-    description:
-      name: circle_checkbox
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.2+1"
   cli_util:
     dependency: transitive
     description:
@@ -417,6 +410,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.5"
+  percent_indicator:
+    dependency: "direct main"
+    description:
+      name: percent_indicator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.0"
   platform:
     dependency: transitive
     description:

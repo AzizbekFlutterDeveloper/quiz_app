@@ -1,0 +1,4 @@
+#Mon Feb 21 12:54:47 EST 2022
+base.0=/home/kali/Desktop/Flutter/quiz_app/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

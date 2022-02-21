@@ -83,7 +83,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               onTap: (){
-                Navigator.pushNamed(context, '/home', arguments: son );
+                Navigator.pushNamed(context, '/asosiy', arguments: son );
                 
               }
             ),

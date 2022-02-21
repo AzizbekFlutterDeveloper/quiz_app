@@ -3,7 +3,6 @@ import 'package:app/provider/checkbox_provider.dart';
 import 'package:app/provider/page_second_provider.dart';
 import 'package:app/service/service_animation.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:circle_checkbox/redev_checkbox.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_timer/simple_timer.dart';
@@ -11,8 +10,9 @@ import 'package:simple_timer/simple_timer.dart';
 import '../core/data.dart';
 
 class HomePage extends StatefulWidget {
-  final int number;
-  const HomePage({Key? key, required this.number}) : super(key: key);
+  const HomePage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -29,7 +29,8 @@ class _HomePageState extends State<HomePage>
     finish();
     super.initState();
   }
-  
+
+  int son = 0;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -57,12 +58,29 @@ class _HomePageState extends State<HomePage>
                 ),
                 child: Column(
                   children: [
-                    Container(
-                      margin: EdgeInsets.only(top: size.height * 0.05),
+                    SizedBox(
+                      height: size.height * 0.05,
+                    ),
+                    SizedBox(
+                      height: size.height * 0.05,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: size.width * 0.02,
+                          ),
+                          IconButton(
+                            icon: Icon(Icons.arrow_back_ios),
+                            onPressed: () {
+                              myShow(size);
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
                       height: size.height * 0.2,
                       width: size.width * 0.9,
-                      color: Colors.transparent,
-                      child: Center(child: AutoSizeText(quiz[context.watch<PageParovider>().index]['savol'])),
+                      child: Center(child: AutoSizeText(quiz[1]['savol'])),
                     ),
                   ],
                 ),
@@ -83,12 +101,6 @@ class _HomePageState extends State<HomePage>
                       backgroundColor: Colors.blue.shade800,
                     ),
                   ),
-                  onTap: () {
-                    _timerController!.start();
-                  },
-                  onLongPress: () {
-                    _timerController!.reset();
-                  },
                 ),
               ),
             ],
@@ -129,6 +141,9 @@ class _HomePageState extends State<HomePage>
                             context.watch<CheckBoxProvider>().check == true
                                 ? null
                                 : () {
+                                    setState(() {
+                                      son = index;
+                                    });
                                     if (quiz[0]["togri"] == index) {
                                       context
                                           .read<CheckBoxProvider>()
@@ -136,7 +151,7 @@ class _HomePageState extends State<HomePage>
                                     } else {
                                       context
                                           .read<CheckBoxProvider>()
-                                          .wrongFunction(0, index);
+                                          .wrongFunction(index);
                                     }
                                   },
                       ),
@@ -151,17 +166,81 @@ class _HomePageState extends State<HomePage>
     );
   }
 
-  start() async{
-    Future.delayed(Duration(seconds: 1)).then((value) => _timerController!.start());
+  start() async {
+    Future.delayed(Duration(seconds: 1))
+        .then((value) => _timerController!.start());
   }
-  finish() async{
-    // int son = context.watch<PageParovider>().index;
-    // int index1 = context.watch<CheckBoxProvider>().index1;
-    // int item = context.watch<CheckBoxProvider>().item1;
-    Future.delayed(Duration(seconds: 16)).then((value){
+
+  finish() async {
+    Future.delayed(Duration(seconds: 16)).then((value) {
       context.read<PageParovider>().page();
-      context.read<CheckBoxProvider>().finishFunction(0,2 );
-      Navigator.pushNamed(context, '/home',arguments: 1);
+      context.read<CheckBoxProvider>().finishFunction(son);
+      Navigator.pushNamed(context, '/bolim');
     });
+  }
+
+  myShow(Size size) {
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: Colors.transparent,
+          content: Container(
+            height: size.height * 0.2,
+            width: size.width * 0.6,
+            decoration: BoxDecoration(
+              borderRadius: MyContanier.myBorder,
+              color: Colors.white,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: size.height * 0.12,
+                  width: size.width * 0.6,
+                  child: Center(
+                      child: Text(
+                    "Bosh Menuga qaytishni xoxlaysizmi?",
+                    textAlign: TextAlign.center,
+                  )),
+                ),
+                SizedBox(
+                  height: size.height * 0.07,
+                  width: size.width * 0.6,
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        TextButton(
+                          child: Text("Yo'q",
+                            style: TextStyle(
+                              color: Colors.red,
+                            ),
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                        TextButton(
+                          child: Text("Ha",
+                           style: TextStyle(
+                             color: Colors.green,
+                           ),
+                          ),
+                          onPressed: () {
+                            Navigator.pushNamedAndRemoveUntil(context, '/asosiy', (route) => false);
+                         },
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
   }
 }
