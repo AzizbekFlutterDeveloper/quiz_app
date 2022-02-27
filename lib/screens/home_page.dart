@@ -1,13 +1,14 @@
-import 'package:app/core/contanier_consts.dart';
-import 'package:app/provider/checkbox_provider.dart';
-import 'package:app/provider/page_second_provider.dart';
-import 'package:app/service/service_animation.dart';
-import 'package:auto_size_text/auto_size_text.dart';
+import 'package:app/core/sizeconfige/size_config.dart';
+import 'package:app/widget/buttom_contanier.dart';
+import 'package:app/widget/container.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_timer/simple_timer.dart';
 
 import '../core/data.dart';
+import '../provider/login_provider.dart';
+import '../provider/til_provider.dart';
+import '../widget/my_row.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({
@@ -25,222 +26,136 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     _timerController = TimerController(this);
-    start();
-    finish();
     super.initState();
   }
 
   int son = 0;
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    var indexT = context.watch<TilProvider>().index;
+    SizeConfig().init(context);
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          Stack(
-            children: [
-              Container(
-                height: size.height * 0.35,
-                width: size.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.vertical(
-                    bottom: Radius.circular(80),
-                  ),
-                  color: MyContanier.correct,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(4.0, 2.0),
-                      blurRadius: 6.0,
-                    ),
-                  ],
-                ),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: size.height * 0.05,
-                    ),
-                    SizedBox(
-                      height: size.height * 0.05,
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: size.width * 0.02,
-                          ),
-                          IconButton(
-                            icon: Icon(Icons.arrow_back_ios),
-                            onPressed: () {
-                              myShow(size);
-                            },
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: size.height * 0.2,
-                      width: size.width * 0.9,
-                      child: Center(child: AutoSizeText(quiz[1]['savol'])),
-                    ),
-                  ],
-                ),
-              ),
-              Positioned(
-                top: size.height * 0.29,
-                left: size.width * 0.38,
-                child: InkWell(
-                  child: CircleAvatar(
-                    radius: size.width * 0.12,
-                    backgroundColor: Colors.white,
-                    child: SimpleTimer(
-                      controller: _timerController,
-                      duration: Duration(seconds: 15),
-                      progressIndicatorDirection:
-                          TimerProgressIndicatorDirection.counter_clockwise,
-                      progressIndicatorColor: Colors.white70,
-                      backgroundColor: Colors.blue.shade800,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-            clipBehavior: Clip.none,
+      drawer: Drawer(
+        backgroundColor: Colors.transparent,
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.black.withOpacity(0.6),
           ),
-          SizedBox(
-            height: size.height * 0.1,
-          ),
-          SizedBox(
-            height: size.height * 0.55,
-            width: size.width * 0.9,
-            child: ListView.builder(
-              itemCount: 4,
-              itemBuilder: (context, index) {
-                return FadeAnimation(
-                  0.5,
-                  MyContanier.myButtom(
-                    context,
-                    color: context.watch<CheckBoxProvider>().color[index],
-                    elevationcolor:
-                        context.watch<CheckBoxProvider>().color[index],
-                    child: ListTile(
-                      leading: Text(
-                        "A",
-                        style: TextStyle(
-                          color: context.watch<CheckBoxProvider>().color[index],
-                        ),
-                      ),
-                      title: Text(
-                        "Javoblar",
-                        style: TextStyle(
-                          color: context.watch<CheckBoxProvider>().color[index],
-                        ),
-                      ),
-                      trailing: IconButton(
-                        icon: context.watch<CheckBoxProvider>().icon[index],
-                        onPressed:
-                            context.watch<CheckBoxProvider>().check == true
-                                ? null
-                                : () {
-                                    setState(() {
-                                      son = index;
-                                    });
-                                    if (quiz[0]["togri"] == index) {
-                                      context
-                                          .read<CheckBoxProvider>()
-                                          .correctFunction(index);
-                                    } else {
-                                      context
-                                          .read<CheckBoxProvider>()
-                                          .wrongFunction(index);
-                                    }
-                                  },
-                      ),
-                    ),
-                  ),
-                );
-              },
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  start() async {
-    Future.delayed(Duration(seconds: 1))
-        .then((value) => _timerController!.start());
-  }
-
-  finish() async {
-    Future.delayed(Duration(seconds: 16)).then((value) {
-      context.read<PageParovider>().page();
-      context.read<CheckBoxProvider>().finishFunction(son);
-      Navigator.pushNamed(context, '/bolim');
-    });
-  }
-
-  myShow(Size size) {
-    return showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          backgroundColor: Colors.transparent,
-          content: Container(
-            height: size.height * 0.2,
-            width: size.width * 0.6,
-            decoration: BoxDecoration(
-              borderRadius: MyContanier.myBorder,
-              color: Colors.white,
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: getHeight(63.0),
+              left: getWidth(20),
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: size.height * 0.12,
-                  width: size.width * 0.6,
-                  child: Center(
-                      child: Text(
-                    "Bosh Menuga qaytishni xoxlaysizmi?",
-                    textAlign: TextAlign.center,
-                  )),
-                ),
-                SizedBox(
-                  height: size.height * 0.07,
-                  width: size.width * 0.6,
-                  child: Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        TextButton(
-                          child: Text("Yo'q",
-                            style: TextStyle(
-                              color: Colors.red,
-                            ),
-                          ),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                        ),
-                        TextButton(
-                          child: Text("Ha",
-                           style: TextStyle(
-                             color: Colors.green,
-                           ),
-                          ),
-                          onPressed: () {
-                            Navigator.pushNamedAndRemoveUntil(context, '/asosiy', (route) => false);
-                         },
-                        ),
-                      ],
-                    ),
+                Text(
+                  "${tilar['home'][indexT]['menu']}",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: getHeight(22),
+                    fontWeight: FontWeight.w600,
                   ),
+                ),
+                SizedBox(height: getHeight(30)),
+                MyRow(
+                  icon: Icons.settings_outlined,
+                  name: "sozlash",
+                  index: indexT,
+                ),
+                SizedBox(height: getHeight(30)),
+                MyRow(
+                  icon: Icons.share_outlined,
+                  name: "ulashish",
+                  index: indexT,
+                ),
+                SizedBox(height: getHeight(30)),
+                MyRow(
+                  icon: Icons.info_outline,
+                  name: "biz",
+                  index: indexT,
+                ),
+                SizedBox(height: getHeight(470)),
+                MyRow(
+                  icon: Icons.help_outline_rounded,
+                  name: "yordam",
+                  index: indexT,
                 ),
               ],
             ),
           ),
-        );
-      },
+        ),
+      ),
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(
+            Icons.short_text_rounded,
+            size: getHeight(40),
+            color: Colors.white,
+          ),
+          onPressed: () {},
+        ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Text(
+                "${tilar['home'][indexT]['hi']}, ${context.watch<LoginProvider>().controller!.text}"),
+          ],
+        ),
+        backgroundColor: const Color(0xff4361EE),
+        toolbarHeight: getHeight(64),
+        actions: [
+          Container(
+            margin: EdgeInsets.symmetric(
+                vertical: getHeight(12), horizontal: getWidth(10)),
+            height: getWidth(35),
+            width: getWidth(35),
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+      body: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2, mainAxisExtent: getHeight(230)),
+          itemCount: 6,
+          itemBuilder: (context, index) {
+            return HomeContainer(
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    SizedBox(
+                      height: getHeight(89),
+                      width: getWidth(59),
+                      child: Image.asset(index == 0
+                          ? "assets/image/Vector.png"
+                          : "assets/image/lock.png"),
+                    ),
+                    Text(
+                      "${index + 1}-${tilar['home'][indexT]['bolim']}",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: getHeight(18),
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(
+                      "${tilar['home'][indexT]['nima']}",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: getHeight(12),
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          }),
     );
   }
 }

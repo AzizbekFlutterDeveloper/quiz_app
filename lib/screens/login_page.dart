@@ -1,95 +1,113 @@
-
-import 'package:app/core/contanier_consts.dart';
+import 'package:app/core/data.dart';
+import 'package:app/core/sizeconfige/size_config.dart';
+import 'package:app/provider/login_provider.dart';
 import 'package:app/provider/page_second_provider.dart';
+import 'package:app/widget/buttom_contanier.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../provider/til_provider.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    int son = context.watch<PageParovider>().index;
+    SizeConfig().init(context);
+    var indexT = context.watch<TilProvider>().index;
     return Scaffold(
-      backgroundColor: Colors.white,
+      resizeToAvoidBottomInset: false,
+      backgroundColor: const Color(0xff4361EE),
       body: Padding(
-        padding: EdgeInsets.only(
-          top: size.height * 0.12,
-          left: size.width * 0.05,
-          right: size.width * 0.05,
+        padding: EdgeInsets.symmetric(
+          vertical: getHeight(113),
+          horizontal: getWidth(24),
         ),
         child: Column(
           children: [
-            const SizedBox(
-              width: double.infinity,
-            ),
             Text(
-              "Savol-Javob Appga",
+              "${tilar['sarlavha'][indexT]['satr1']}",
               style: TextStyle(
-                fontSize: size.width * 0.07,
-                color: MyContanier.correct,
+                fontSize: getHeight(36),
+                fontWeight: FontWeight.w500,
+                color: Colors.white,
               ),
             ),
             Text(
-              "Xush Kelibsiz !!!",
+              "${tilar['sarlavha'][indexT]['satr2']}",
               style: TextStyle(
-                fontSize: size.width * 0.08,
-                color: MyContanier.correct,
+                fontSize: getHeight(36),
+                fontWeight: FontWeight.w600,
+                color: Colors.white,
               ),
             ),
-            SizedBox(
-              height: size.height * 0.05,
-            ),
-            MyContanier.myButtom(
-              context,
-              color: MyContanier.correct,
-              elevationcolor: const Color.fromARGB(255, 190, 218, 191),
+            SizedBox(height: getHeight(50)),
+            MyContainer(
               child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: size.width * 0.03,
-                ),
+                padding: EdgeInsets.symmetric(horizontal: getWidth(20)),
                 child: TextFormField(
-                  decoration: const InputDecoration(
+                  controller: context.watch<LoginProvider>().controller,
+                  style: const TextStyle(color: Colors.white),
+                  cursorColor: Colors.white,
+                  decoration:  InputDecoration(
                     border: InputBorder.none,
+                    hintText: "${tilar['sarlavha'][indexT]['textForm']}",
+                    hintStyle: const TextStyle(color: Colors.grey),
                   ),
+                  onChanged: (v){
+                    context.read<LoginProvider>().next();
+                  },
                 ),
               ),
             ),
-            MyContanier.myButtom(
-              context,
-              color: MyContanier.correct,
-              elevationcolor: const Color.fromARGB(255, 190, 218, 191),
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: size.width * 0.03,
-                ),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    border: InputBorder.none,
+            MyContainer(
+              child: Row(
+                children: [
+                  SizedBox(width: getWidth(20)),
+                  Text(context.watch<TilProvider>().til,
+                    style: TextStyle(
+                      fontSize: getHeight(18),
+                      color: Colors.white,
+                    ),
                   ),
-                ),
+                  const Spacer(),
+                  PopupMenuButton(
+                    initialValue: 0,
+                    icon: Icon(Icons.keyboard_arrow_down_sharp,color: Colors.white,size: getHeight(25),),
+                    shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
+                    itemBuilder: (context){
+                      return List.generate(3, (index){
+                        return PopupMenuItem(
+                          child: Text("${tillar[index]}"),
+                          value: index,
+                        );
+                      },);
+                    },
+                    onSelected: (v){
+                      context.read<TilProvider>().tilAlmash(v);
+                    },
+                  ),
+                ],
               ),
             ),
             const Spacer(),
-            MyContanier.myButtom(
-              context,
-              colorbody: MyContanier.correct,
-              elevationcolor: const Color.fromARGB(255, 193, 247, 221),
-              child: Text("Next",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: size.height * 0.025,
+            InkWell(
+              child: MyContainer(
+                child: Text(
+                  "${tilar['sarlavha'][indexT]['Keyingi']}",
+                  style: TextStyle(
+                    fontSize: getHeight(18),
+                    fontWeight: FontWeight.w500,
+                    color: context.watch<LoginProvider>().text,
+                  ),
                 ),
+                color: context.watch<LoginProvider>().container,
               ),
-              onTap: (){
-                Navigator.pushNamed(context, '/asosiy', arguments: son );
-                
-              }
+              onTap:context.watch<LoginProvider>().controller!.text.length > 2 ? (){
+                Navigator.pushReplacementNamed(context, '/home');
+              } : null,
             ),
-            SizedBox(
-              height: size.height * 0.05,
-            )
+            
           ],
         ),
       ),

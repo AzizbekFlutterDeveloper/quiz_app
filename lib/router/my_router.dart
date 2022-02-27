@@ -12,10 +12,10 @@ class MyRouter{
         return MaterialPageRoute(builder: (context) => const LoginPage());
       case '/home':
         return MaterialPageRoute(builder: (context) => HomePage());
-      case '/asosiy':
-        return MaterialPageRoute(builder: (context) => AsosiyPAge());
-      case '/bolim':
-        return MaterialPageRoute(builder: (context) => BolimPage());
+      // case '/asosiy':
+      //   return MaterialPageRoute(builder: (context) => AsosiyPAge());
+      // case '/bolim':
+      //   return MaterialPageRoute(builder: (context) => BolimPage());
     
     }
   }

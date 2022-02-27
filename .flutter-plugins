@@ -5,3 +5,5 @@ path_provider_ios=/home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/path_pro
 path_provider_linux=/home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.1.5/
 path_provider_macos=/home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-2.0.5/
 path_provider_windows=/home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.5/
+shared_preferences=/home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.5/
+shared_preferences_macos=/home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_macos-0.0.1+11/

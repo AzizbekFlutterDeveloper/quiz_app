@@ -1,5 +1,7 @@
 import 'package:app/provider/checkbox_provider.dart';
+import 'package:app/provider/login_provider.dart';
 import 'package:app/provider/page_second_provider.dart';
+import 'package:app/provider/til_provider.dart';
 import 'package:app/router/my_router.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -14,6 +16,10 @@ void main() {
         ChangeNotifierProvider(
           create: (context) => PageParovider(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => TilProvider(),
+        ),
+        ChangeNotifierProvider(create: (context) => LoginProvider(),),
       ],
       child: MyApp(),
     ),
