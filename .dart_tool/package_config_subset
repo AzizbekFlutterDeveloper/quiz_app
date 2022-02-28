@@ -90,6 +90,10 @@ convert
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/convert-3.0.1/
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/convert-3.0.1/lib/
+cross_file
+2.12
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/cross_file-0.3.2/
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/cross_file-0.3.2/lib/
 crypto
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-3.0.1/
@@ -126,6 +130,10 @@ flutter_lints
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4/
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4/lib/
+flutter_plugin_android_lifecycle
+2.12
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.5/
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.5/lib/
 frontend_server_client
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/frontend_server_client-2.1.2/
@@ -162,6 +170,14 @@ http_parser
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0/
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0/lib/
+image_picker
+2.12
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.7.2+1/
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.7.2+1/lib/
+image_picker_platform_interface
+2.12
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_platform_interface-2.4.4/
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_platform_interface-2.4.4/lib/
 intl
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0/
@@ -298,6 +314,10 @@ simple_animations
 2.14
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/simple_animations-4.0.1/
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/simple_animations-4.0.1/lib/
+simple_drawer
+2.12
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/simple_drawer-0.0.11/
+file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/simple_drawer-0.0.11/lib/
 simple_timer
 2.12
 file:///home/kali/flutter/.pub-cache/hosted/pub.dartlang.org/simple_timer-2.0.0/
