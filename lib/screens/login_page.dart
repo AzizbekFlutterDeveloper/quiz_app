@@ -4,13 +4,26 @@ import 'package:app/provider/login_provider.dart';
 import 'package:app/provider/page_second_provider.dart';
 import 'package:app/widget/buttom_contanier.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
 
 import '../provider/til_provider.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+
+  @override
+  void initState() {
+    super.initState();
+    hiveopen();
+  }
+  Box? box;
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -103,14 +116,22 @@ class LoginPage extends StatelessWidget {
                 ),
                 color: context.watch<LoginProvider>().container,
               ),
-              onTap:context.watch<LoginProvider>().controller!.text.length > 2 ? (){
+              onTap:context.watch<LoginProvider>().controller!.text.length > 2 ? ()async{
+                await box!.add(context.watch<LoginProvider>().controller!.text);
+                print(box);
                 Navigator.pushReplacementNamed(context, '/home');
-              } : null,
+
+              } : (){},
             ),
             
           ],
         ),
       ),
     );
+  }
+
+  hiveopen()async{
+    box = await Hive.openBox("data");
+    print(box);
   }
 }

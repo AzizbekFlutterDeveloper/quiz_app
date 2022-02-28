@@ -1,8 +1,12 @@
+import 'dart:math';
 
 import 'package:app/core/sizeconfige/size_config.dart';
+import 'package:app/provider/photo_provider.dart';
 import 'package:app/widget/acount_container.dart';
 import 'package:app/widget/buttom_contanier.dart';
+import 'package:app/widget/showDialog/showDialog.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 
 import '../core/data.dart';
@@ -10,11 +14,13 @@ import '../provider/til_provider.dart';
 
 class AcountPage extends StatelessWidget {
   AcountPage({Key? key}) : super(key: key);
+  
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     var indexT = context.watch<TilProvider>().index;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
           Container(
@@ -43,11 +49,12 @@ class AcountPage extends StatelessWidget {
                 CircleAvatar(
                   radius: getHeight(55),
                   backgroundColor: Colors.white,
-                  child: Icon(
-                    Icons.person,
-                    color: Color(0xff4361EE),
-                    size: getHeight(90),
-                  ),
+                  backgroundImage: FileImage(context.watch<PhotoProvider>().picture),
+                  // child: Icon(
+                  //   Icons.person,
+                  //   color: Color(0xff4361EE),
+                  //   size: getHeight(90),
+                  // ),
                 ),
                 Text(
                   "Azizbek",
@@ -140,7 +147,7 @@ class AcountPage extends StatelessWidget {
                     ),
                   ),
                   onTap: () {
-                    _showDialog(context);
+                    ShowDialog.myShowDialog(context);
                   },
                 ),
               ],
@@ -148,28 +155,8 @@ class AcountPage extends StatelessWidget {
           ),
         ],
       ),
-      
     );
   }
 
-  _showDialog(context){
-    return showDialog(
-      context: context, 
-      builder: (context){
-        return AlertDialog(
-          backgroundColor: Colors.transparent,
-          content: Container(
-            height: getHeight(300),
-            width: getWidth(340),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(20)),
-              color: Colors.white,
-              border: Border.all(color: Color(0xff4361EE)),
-            ),
-          ),
-        );
-      }
-    );
-  }
   
 }

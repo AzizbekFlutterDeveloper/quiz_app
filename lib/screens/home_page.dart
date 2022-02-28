@@ -1,4 +1,5 @@
 import 'package:app/core/sizeconfige/size_config.dart';
+import 'package:app/provider/photo_provider.dart';
 import 'package:app/widget/container.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -110,9 +111,13 @@ class _HomePageState extends State<HomePage>
                   vertical: getHeight(12), horizontal: getWidth(10)),
               height: getWidth(35),
               width: getWidth(35),
-              decoration: const BoxDecoration(
+              decoration:  BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 color: Colors.white,
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: FileImage(context.watch<PhotoProvider>().picture),
+                ),
               ),
             ),
             onTap: (){

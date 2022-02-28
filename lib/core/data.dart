@@ -35,6 +35,7 @@ Map tilar = {
       "ulashish": "Ulashish",
       "biz": "Biz haqimizda",
       "yordam":"Yordam",
+      "rasm":"Rasm qo'shish",
     },
     {
       "hi":"Hello",
@@ -45,6 +46,7 @@ Map tilar = {
       "ulashish": "Share",
       "biz": "About us",
       "yordam":"Help",
+      "rasm":"Add a picture",
     },
     {
       "hi":"Привет",
@@ -55,11 +57,14 @@ Map tilar = {
       "ulashish": "Делиться",
       "biz": "O нас",
       "yordam":"Помощь",
+      "rasm":"Добавить из...",
     }
   ],
   
 };
-
+List hives = [
+  "","","",
+];
 
 
 List quiz = [

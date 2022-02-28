@@ -1,12 +1,16 @@
 import 'package:app/provider/checkbox_provider.dart';
 import 'package:app/provider/login_provider.dart';
 import 'package:app/provider/page_second_provider.dart';
+import 'package:app/provider/photo_provider.dart';
 import 'package:app/provider/til_provider.dart';
 import 'package:app/router/my_router.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async{ 
+  await Hive.initFlutter();
+  await Hive.openBox("data");
   runApp(
     MultiProvider(
       providers: [
@@ -20,6 +24,7 @@ void main() {
           create: (context) => TilProvider(),
         ),
         ChangeNotifierProvider(create: (context) => LoginProvider(),),
+        ChangeNotifierProvider(create: (context) => PhotoProvider(),),
       ],
       child: MyApp(),
     ),
