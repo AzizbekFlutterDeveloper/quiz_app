@@ -1,0 +1,70 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run
+
+## exception
+
+NoSuchMethodError: NoSuchMethodError: The getter 'assetPathsToEvict' was called on null.
+Receiver: null
+Tried calling: assetPathsToEvict
+
+```
+#0      Object.noSuchMethod (dart:core-patch/object_patch.dart:38:5)
+#1      HotRunner._resetDirtyAssets (package:flutter_tools/src/run_hot.dart:510:20)
+#2      HotRunner._restartFromSources (package:flutter_tools/src/run_hot.dart:578:5)
+<asynchronous suspension>
+#3      HotRunner._fullRestartHelper (package:flutter_tools/src/run_hot.dart:760:16)
+<asynchronous suspension>
+#4      HotRunner.restart (package:flutter_tools/src/run_hot.dart:707:38)
+<asynchronous suspension>
+#5      TerminalHandler._commonTerminalInputHandler (package:flutter_tools/src/resident_runner.dart:1640:40)
+<asynchronous suspension>
+#6      TerminalHandler.processTerminalInput (package:flutter_tools/src/resident_runner.dart:1680:7)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 2.10.1, on Kali GNU/Linux Rolling 5.14.0-kali4-amd64, locale en_US.UTF-8)
+    • Flutter version 2.10.1 at /home/kali/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision db747aa133 (3 weeks ago), 2022-02-09 13:57:35 -0600
+    • Engine revision ab46186b24
+    • Dart version 2.16.1
+    • DevTools version 2.9.2
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 32.1.0-rc1)
+    • Android SDK at /home/kali/Android/Sdk
+    • Platform android-32, build-tools 32.1.0-rc1
+    • Java binary at: /home/kali/Downloads/yangi/android-studio/jre/bin/java
+    • Java version openjdk version "11.0.11" 2021-04-20
+    • All Android licenses accepted.
+
+[✓] Chrome - develop for the web
+    • Chrome at google-chrome
+
+[✓] Android Studio (version 2021.1)
+    • Android Studio at /home/kali/Downloads/yangi/android-studio
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version openjdk version "11.0.11" 2021-04-20
+
+[✓] VS Code (version 1.64.2)
+    • VS Code at /usr/share/code
+    • Flutter extension version 3.34.0
+
+[✓] Connected device (2 available)
+    • SM A715F (mobile) • R58N66623LX • android-arm64  • Android 11 (API 30)
+    • Chrome (web)      • chrome      • web-javascript • Google Chrome 98.0.4758.80
+
+[✓] HTTP Host Availability
+    • All required HTTP hosts are available
+
+• No issues found!
+```

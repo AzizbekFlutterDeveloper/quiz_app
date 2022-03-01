@@ -1,3 +1,4 @@
+import 'package:app/model/model.dart';
 import 'package:app/provider/checkbox_provider.dart';
 import 'package:app/provider/login_provider.dart';
 import 'package:app/provider/page_second_provider.dart';
@@ -9,8 +10,10 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 
 void main() async{ 
+  WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
-  await Hive.openBox("data");
+  Hive.registerAdapter(ModelAdapter());
+  await Hive.openBox<Model>("data");
   runApp(
     MultiProvider(
       providers: [

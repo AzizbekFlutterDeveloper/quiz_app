@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:app/core/sizeconfige/size_config.dart';
+import 'package:app/provider/login_provider.dart';
 import 'package:app/provider/photo_provider.dart';
 import 'package:app/widget/acount_container.dart';
 import 'package:app/widget/buttom_contanier.dart';
@@ -18,7 +19,7 @@ class AcountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    var indexT = context.watch<TilProvider>().index;
+    var indexT = context.watch<LoginProvider>().index;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Column(
@@ -49,7 +50,7 @@ class AcountPage extends StatelessWidget {
                 CircleAvatar(
                   radius: getHeight(55),
                   backgroundColor: Colors.white,
-                  backgroundImage: FileImage(context.watch<PhotoProvider>().picture),
+                  backgroundImage: FileImage(context.watch<LoginProvider>().picture),
                   // child: Icon(
                   //   Icons.person,
                   //   color: Color(0xff4361EE),

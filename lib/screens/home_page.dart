@@ -1,7 +1,10 @@
 import 'package:app/core/sizeconfige/size_config.dart';
+import 'package:app/model/model.dart';
 import 'package:app/provider/photo_provider.dart';
+import 'package:app/service/box_hive.dart';
 import 'package:app/widget/container.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_timer/simple_timer.dart';
 
@@ -32,7 +35,7 @@ class _HomePageState extends State<HomePage>
   int son = 0;
   @override
   Widget build(BuildContext context) {
-    var indexT = context.watch<TilProvider>().index;
+    var indexT = context.watch<LoginProvider>().index;
     SizeConfig().init(context);
     return Scaffold(
       drawer: Drawer(
@@ -95,13 +98,18 @@ class _HomePageState extends State<HomePage>
           ),
           onPressed: () {},
         ),
-        title: Row(
+        title: ValueListenableBuilder<Box<Model>>(
+          valueListenable: BoxServise.getbox().listenable(),
+          builder: (context, box, index) {
+          var data = box.values.toList().cast<Model>();
+          return Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Text(
-                "${tilar['home'][indexT]['hi']}, ${context.watch<LoginProvider>().controller!.text}"),
+                "${tilar['home'][indexT]['hi']}, ${data[0].name}"),
           ],
-        ),
+        );
+        } ,),
         backgroundColor: const Color(0xff4361EE),
         toolbarHeight: getHeight(64),
         actions: [
@@ -111,60 +119,61 @@ class _HomePageState extends State<HomePage>
                   vertical: getHeight(12), horizontal: getWidth(10)),
               height: getWidth(35),
               width: getWidth(35),
-              decoration:  BoxDecoration(
+              decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 color: Colors.white,
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: FileImage(context.watch<PhotoProvider>().picture),
+                  image: FileImage(context.watch<LoginProvider>().picture),
                 ),
               ),
             ),
-            onTap: (){
+            onTap: () {
               Navigator.pushNamed(context, '/acount');
             },
           ),
         ],
       ),
       body: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, mainAxisExtent: getHeight(230)),
-          itemCount: 6,
-          itemBuilder: (context, index) {
-            return HomeContainer(
-              child: Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(
-                      height: getHeight(89),
-                      width: getWidth(59),
-                      child: Image.asset(index == 0
-                          ? "assets/image/Vector.png"
-                          : "assets/image/lock.png"),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, mainAxisExtent: getHeight(230)),
+        itemCount: 6,
+        itemBuilder: (context, index) {
+          return HomeContainer(
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  SizedBox(
+                    height: getHeight(89),
+                    width: getWidth(59),
+                    child: Image.asset(index == 0
+                        ? "assets/image/Vector.png"
+                        : "assets/image/lock.png"),
+                  ),
+                  Text(
+                    "${index + 1}-${tilar['home'][indexT]['bolim']}",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: getHeight(18),
+                      fontWeight: FontWeight.w600,
                     ),
-                    Text(
-                      "${index + 1}-${tilar['home'][indexT]['bolim']}",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: getHeight(18),
-                        fontWeight: FontWeight.w600,
-                      ),
+                  ),
+                  Text(
+                    "${tilar['home'][indexT]['nima']}",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: getHeight(12),
+                      color: Colors.grey,
                     ),
-                    Text(
-                      "${tilar['home'][indexT]['nima']}",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: getHeight(12),
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            );
-          }),
+            ),
+          );
+        },
+      ),
     );
   }
 }

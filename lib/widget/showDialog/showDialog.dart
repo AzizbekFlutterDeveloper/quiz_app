@@ -69,7 +69,7 @@ class ShowDialog {
                           ),
                           SizedBox(width: getWidth(10)),
                           Text(
-                            "${tilar['home'][context.watch<TilProvider>().index]['rasm']}",
+                            "${tilar['home'][context.watch<LoginProvider>().index]['rasm']}",
                             style: TextStyle(
                               color: Color(0xff4361EE),
                               fontSize: getHeight(16),
@@ -80,7 +80,7 @@ class ShowDialog {
                     ),
                     onTap: () async{
                      final PickedFile? image = await picker.getImage(source: ImageSource.gallery).then((value){
-                       context.read<PhotoProvider>().addPicture(value);
+                       context.read<LoginProvider>().addPicture(value);
                      });
                       
                     },
@@ -102,7 +102,7 @@ class ShowDialog {
                         ),
                         SizedBox(width: getWidth(10)),
                         Text(
-                          context.watch<TilProvider>().til,
+                          context.watch<LoginProvider>().til,
                           style: TextStyle(
                             color: Color(0xff4361EE),
                             fontSize: getHeight(18),
@@ -131,7 +131,7 @@ class ShowDialog {
                             );
                           },
                           onSelected: (v) {
-                            context.read<TilProvider>().tilAlmash(v);
+                            context.read<LoginProvider>().tilAlmash(v);
                           },
                         ),
                       ],

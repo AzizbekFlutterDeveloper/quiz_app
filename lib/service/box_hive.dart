@@ -1,10 +1,8 @@
 import 'package:hive_flutter/hive_flutter.dart';
 
-import '../core/data.dart';
+import '../model/model.dart';
 
 class BoxServise{
-  static Box? box;
-  static getBox()async{
-    box = await Hive.openBox("data");
-  }
+  static  Box<Model> getbox() => Hive.box<Model>('data');
+  
 }

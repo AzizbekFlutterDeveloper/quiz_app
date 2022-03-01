@@ -47,6 +47,7 @@ dependencies:
   percent_indicator: ^4.0.0
   simple_drawer: ^0.0.11
   image_picker: ^0.7.2+1
+  shared_preferences: ^2.0.13
 
 dev_dependencies:
   flutter_test:

@@ -1,7 +1,9 @@
 import 'package:app/core/data.dart';
 import 'package:app/core/sizeconfige/size_config.dart';
+import 'package:app/model/model.dart';
 import 'package:app/provider/login_provider.dart';
 import 'package:app/provider/page_second_provider.dart';
+import 'package:app/service/box_hive.dart';
 import 'package:app/widget/buttom_contanier.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
@@ -21,13 +23,12 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-    hiveopen();
   }
   Box? box;
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    var indexT = context.watch<TilProvider>().index;
+    var indexT = context.watch<LoginProvider>().index;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xff4361EE),
@@ -77,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Row(
                 children: [
                   SizedBox(width: getWidth(20)),
-                  Text(context.watch<TilProvider>().til,
+                  Text(context.watch<LoginProvider>().til,
                     style: TextStyle(
                       fontSize: getHeight(18),
                       color: Colors.white,
@@ -97,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                       },);
                     },
                     onSelected: (v){
-                      context.read<TilProvider>().tilAlmash(v);
+                      context.read<LoginProvider>().tilAlmash(v);
                     },
                   ),
                 ],
@@ -116,9 +117,8 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 color: context.watch<LoginProvider>().container,
               ),
-              onTap:context.watch<LoginProvider>().controller!.text.length > 2 ? ()async{
-                await box!.add(context.watch<LoginProvider>().controller!.text);
-                print(box);
+              onTap:context.watch<LoginProvider>().controller!.text.length > 2 ? (){
+                context.read<LoginProvider>().addClients();
                 Navigator.pushReplacementNamed(context, '/home');
 
               } : (){},
@@ -129,9 +129,6 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
-  hiveopen()async{
-    box = await Hive.openBox("data");
-    print(box);
-  }
+  
+  
 }
