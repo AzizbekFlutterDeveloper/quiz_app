@@ -1,15 +1,12 @@
 import 'package:app/core/data.dart';
 import 'package:app/core/sizeconfige/size_config.dart';
-import 'package:app/model/model.dart';
 import 'package:app/provider/login_provider.dart';
-import 'package:app/provider/page_second_provider.dart';
-import 'package:app/service/box_hive.dart';
 import 'package:app/widget/buttom_contanier.dart';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
 
-import '../provider/til_provider.dart';
+import '../core/sizeconfige/colors.dart';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -24,14 +21,15 @@ class _LoginPageState extends State<LoginPage> {
   void initState() {
     super.initState();
   }
-  Box? box;
+   
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    var indexT = context.watch<LoginProvider>().index;
+    int? indexT = context.watch<LoginProvider>().index;
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: const Color(0xff4361EE),
+      backgroundColor: MyColors.myBlue,
       body: Padding(
         padding: EdgeInsets.symmetric(
           vertical: getHeight(113),
@@ -44,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
               style: TextStyle(
                 fontSize: getHeight(36),
                 fontWeight: FontWeight.w500,
-                color: Colors.white,
+                color: MyColors.myWhite,
               ),
             ),
             Text(
@@ -52,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
               style: TextStyle(
                 fontSize: getHeight(36),
                 fontWeight: FontWeight.w600,
-                color: Colors.white,
+                color: MyColors.myWhite,
               ),
             ),
             SizedBox(height: getHeight(50)),
@@ -61,8 +59,8 @@ class _LoginPageState extends State<LoginPage> {
                 padding: EdgeInsets.symmetric(horizontal: getWidth(20)),
                 child: TextFormField(
                   controller: context.watch<LoginProvider>().controller,
-                  style: const TextStyle(color: Colors.white),
-                  cursorColor: Colors.white,
+                  style:  TextStyle(color: MyColors.myWhite),
+                  cursorColor: MyColors.myWhite,
                   decoration:  InputDecoration(
                     border: InputBorder.none,
                     hintText: "${tilar['sarlavha'][indexT]['textForm']}",
@@ -81,13 +79,13 @@ class _LoginPageState extends State<LoginPage> {
                   Text(context.watch<LoginProvider>().til,
                     style: TextStyle(
                       fontSize: getHeight(18),
-                      color: Colors.white,
+                      color: MyColors.myWhite,
                     ),
                   ),
                   const Spacer(),
                   PopupMenuButton(
                     initialValue: 0,
-                    icon: Icon(Icons.keyboard_arrow_down_sharp,color: Colors.white,size: getHeight(25),),
+                    icon: Icon(Icons.keyboard_arrow_down_sharp,color: MyColors.myWhite,size: getHeight(25),),
                     shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
                     itemBuilder: (context){
                       return List.generate(3, (index){
@@ -99,6 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                     },
                     onSelected: (v){
                       context.read<LoginProvider>().tilAlmash(v);
+                     
                     },
                   ),
                 ],
@@ -117,8 +116,8 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 color: context.watch<LoginProvider>().container,
               ),
-              onTap:context.watch<LoginProvider>().controller!.text.length > 2 ? (){
-                context.read<LoginProvider>().addClients();
+              onTap:context.watch<LoginProvider>().controller!.text.length > 2 ? ()async{
+                Provider.of<LoginProvider>(context, listen: false).addDB();
                 Navigator.pushReplacementNamed(context, '/home');
 
               } : (){},

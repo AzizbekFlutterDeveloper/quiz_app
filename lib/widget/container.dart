@@ -1,6 +1,8 @@
 import 'package:app/core/sizeconfige/size_config.dart';
 import 'package:flutter/material.dart';
 
+import '../core/sizeconfige/colors.dart';
+
 class HomeContainer extends StatelessWidget {
   final child;
   const HomeContainer({ Key? key , this.child}) : super(key: key);
@@ -15,9 +17,9 @@ class HomeContainer extends StatelessWidget {
         right: getHeight(10),
         top: getHeight(26),
       ),
-      decoration: BoxDecoration(
+      decoration:  BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(30)),
-        color: Color(0xff4361EE),
+        color: MyColors.myBlue,
       ),
       child: child,
     );

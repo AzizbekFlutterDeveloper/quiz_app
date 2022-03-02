@@ -1,4 +1,4 @@
-import 'package:app/provider/photo_provider.dart';
+import 'package:app/core/sizeconfige/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
@@ -6,10 +6,8 @@ import 'package:provider/provider.dart';
 import '../../core/data.dart';
 import '../../core/sizeconfige/size_config.dart';
 import '../../provider/login_provider.dart';
-import '../../provider/til_provider.dart';
 
 class ShowDialog {
-
   static myShowDialog(context) {
     ImagePicker picker = ImagePicker();
     return showDialog(
@@ -21,9 +19,9 @@ class ShowDialog {
             height: getHeight(300),
             width: getWidth(340),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(20)),
-              color: Colors.white,
-              border: Border.all(color: Color(0xff4361EE)),
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
+              color: MyColors.myWhite,
+              border: Border.all(color: MyColors.myBlue),
             ),
             child: Padding(
               padding: EdgeInsets.all(getHeight(15)),
@@ -35,15 +33,15 @@ class ShowDialog {
                     height: getHeight(50),
                     width: getHeight(200),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      border: Border.all(color: Color(0xff4361EE)),
+                      borderRadius: const BorderRadius.all(Radius.circular(15)),
+                      border: Border.all(color: MyColors.myBlue),
                     ),
                     child: TextFormField(
                       style: TextStyle(
-                        color: Color(0xff4361EE),
+                        color: MyColors.myBlue,
                       ),
                       controller: context.watch<LoginProvider>().controller,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                       ),
                     ),
@@ -57,21 +55,21 @@ class ShowDialog {
                       height: getHeight(50),
                       width: getHeight(200),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(15)),
-                        border: Border.all(color: Color(0xff4361EE)),
+                        borderRadius: const BorderRadius.all(Radius.circular(15)),
+                        border: Border.all(color: MyColors.myBlue),
                       ),
                       child: Row(
                         children: [
                           Icon(
                             Icons.add_a_photo,
-                            color: Color(0xff4361EE),
+                            color: MyColors.myBlue,
                             size: getHeight(30),
                           ),
                           SizedBox(width: getWidth(10)),
                           Text(
                             "${tilar['home'][context.watch<LoginProvider>().index]['rasm']}",
                             style: TextStyle(
-                              color: Color(0xff4361EE),
+                              color: MyColors.myBlue,
                               fontSize: getHeight(16),
                             ),
                           ),
@@ -79,9 +77,10 @@ class ShowDialog {
                       ),
                     ),
                     onTap: () async{
-                     final PickedFile? image = await picker.getImage(source: ImageSource.gallery).then((value){
-                       context.read<LoginProvider>().addPicture(value);
-                     });
+                      final PickedFile? image = await picker.getImage(source: ImageSource.gallery).then((value){
+                        context.read<LoginProvider>().addPicture(value);
+                        return null;
+                      });
                       
                     },
                   ),
@@ -90,30 +89,30 @@ class ShowDialog {
                     height: getHeight(50),
                     width: getHeight(200),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      border: Border.all(color: Color(0xff4361EE)),
+                      borderRadius: const BorderRadius.all(Radius.circular(15)),
+                      border: Border.all(color: MyColors.myBlue),
                     ),
                     child: Row(
                       children: [
                         Icon(
                           Icons.language_rounded,
-                          color: Color(0xff4361EE),
+                          color: MyColors.myBlue,
                           size: getHeight(30),
                         ),
                         SizedBox(width: getWidth(10)),
                         Text(
                           context.watch<LoginProvider>().til,
                           style: TextStyle(
-                            color: Color(0xff4361EE),
+                            color: MyColors.myBlue,
                             fontSize: getHeight(18),
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         PopupMenuButton(
                           initialValue: 0,
                           icon: Icon(
                             Icons.keyboard_arrow_down_sharp,
-                            color: Color(0xff4361EE),
+                            color: MyColors.myBlue,
                             size: getHeight(25),
                           ),
                           shape: const RoundedRectangleBorder(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../core/data.dart';
+import '../core/sizeconfige/colors.dart';
 import '../core/sizeconfige/size_config.dart';
 
 class MyRow extends StatelessWidget {
@@ -16,14 +17,14 @@ class MyRow extends StatelessWidget {
       children: [
         Icon(
           icon,
-          color: Colors.white,
+          color: MyColors.myWhite,
           size: getHeight(30),
         ),
         SizedBox(width: getWidth(16)),
         Text(
           "${tilar['home'][index][name]}",
           style: TextStyle(
-            color: Colors.white,
+            color: MyColors.myWhite,
             fontSize: getHeight(16),
             fontWeight: FontWeight.w600,
           ),

@@ -1,16 +1,13 @@
 import 'package:app/core/sizeconfige/size_config.dart';
-import 'package:app/model/model.dart';
-import 'package:app/provider/photo_provider.dart';
-import 'package:app/service/box_hive.dart';
 import 'package:app/widget/container.dart';
+import 'package:app/widget/showDialog/showDialog.dart';
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_timer/simple_timer.dart';
 
 import '../core/data.dart';
+import '../core/sizeconfige/colors.dart';
 import '../provider/login_provider.dart';
-import '../provider/til_provider.dart';
 import '../widget/my_row.dart';
 
 class HomePage extends StatefulWidget {
@@ -25,7 +22,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   TimerController? _timerController;
-
+ var prefs;
+ String? action;
   @override
   void initState() {
     _timerController = TimerController(this);
@@ -55,16 +53,21 @@ class _HomePageState extends State<HomePage>
                 Text(
                   "${tilar['home'][indexT]['menu']}",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: MyColors.myWhite,
                     fontSize: getHeight(22),
                     fontWeight: FontWeight.w600,
                   ),
                 ),
                 SizedBox(height: getHeight(30)),
-                MyRow(
-                  icon: Icons.settings_outlined,
-                  name: "sozlash",
-                  index: indexT,
+                InkWell(
+                  child: MyRow(
+                    icon: Icons.settings_outlined,
+                    name: "sozlash",
+                    index: indexT,
+                  ),
+                  onTap: (){
+                    ShowDialog.myShowDialog(context);
+                  },
                 ),
                 SizedBox(height: getHeight(30)),
                 MyRow(
@@ -90,27 +93,28 @@ class _HomePageState extends State<HomePage>
         ),
       ),
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.short_text_rounded,
-            size: getHeight(40),
-            color: Colors.white,
-          ),
-          onPressed: () {},
+        leading: Builder(
+          builder: (context){
+            return IconButton(
+            icon: Icon(
+              Icons.short_text_rounded,
+              size: getHeight(40),
+              color: MyColors.myWhite,
+            ),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          );
+          }
         ),
-        title: ValueListenableBuilder<Box<Model>>(
-          valueListenable: BoxServise.getbox().listenable(),
-          builder: (context, box, index) {
-          var data = box.values.toList().cast<Model>();
-          return Row(
+        title:Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Text(
-                "${tilar['home'][indexT]['hi']}, ${data[0].name}"),
+                "${tilar['home'][indexT]['hi']}, ${context.watch<LoginProvider>().name}"),
           ],
-        );
-        } ,),
-        backgroundColor: const Color(0xff4361EE),
+        ),
+        backgroundColor:  MyColors.myBlue,
         toolbarHeight: getHeight(64),
         actions: [
           InkWell(
@@ -120,8 +124,8 @@ class _HomePageState extends State<HomePage>
               height: getWidth(35),
               width: getWidth(35),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                color: Colors.white,
+                borderRadius: const BorderRadius.all(Radius.circular(10)),
+                color: MyColors.myWhite,
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: FileImage(context.watch<LoginProvider>().picture),
@@ -155,7 +159,7 @@ class _HomePageState extends State<HomePage>
                   Text(
                     "${index + 1}-${tilar['home'][indexT]['bolim']}",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: MyColors.myWhite,
                       fontSize: getHeight(18),
                       fontWeight: FontWeight.w600,
                     ),
@@ -176,4 +180,6 @@ class _HomePageState extends State<HomePage>
       ),
     );
   }
+  
+  
 }

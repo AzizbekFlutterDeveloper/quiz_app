@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../core/sizeconfige/colors.dart';
 import '../core/sizeconfige/size_config.dart';
 
 class MyContainer extends StatelessWidget {
@@ -19,8 +20,8 @@ class MyContainer extends StatelessWidget {
       height: getHeight(60),
       width: getWidth(327),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(16)),
-        border: Border.all(color: borderColor ?? Colors.white),
+        borderRadius: const BorderRadius.all(Radius.circular(16)),
+        border: Border.all(color: borderColor ?? MyColors.myWhite),
         color: color ?? Colors.transparent,
       ),
       child: Center(child: child),

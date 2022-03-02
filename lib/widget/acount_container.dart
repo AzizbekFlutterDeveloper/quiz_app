@@ -2,6 +2,8 @@
 import 'package:app/core/sizeconfige/size_config.dart';
 import 'package:flutter/material.dart';
 
+import '../core/sizeconfige/colors.dart';
+
 class AcountContainer extends StatelessWidget {
   final color;
   final child;
@@ -15,7 +17,7 @@ class AcountContainer extends StatelessWidget {
       height: getHeight(105),
       width: getWidth(95),
       decoration: BoxDecoration(
-        border: Border.all(color: const Color(0xff4361EE)),
+        border: Border.all(color:  MyColors.myBlue),
         color: color,
       ),
       child: child,
