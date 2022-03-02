@@ -143,38 +143,43 @@ class _HomePageState extends State<HomePage>
             crossAxisCount: 2, mainAxisExtent: getHeight(230)),
         itemCount: 6,
         itemBuilder: (context, index) {
-          return HomeContainer(
-            child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  SizedBox(
-                    height: getHeight(89),
-                    width: getWidth(59),
-                    child: Image.asset(index == 0
-                        ? "assets/image/Vector.png"
-                        : "assets/image/lock.png"),
-                  ),
-                  Text(
-                    "${index + 1}-${tilar['home'][indexT]['bolim']}",
-                    style: TextStyle(
-                      color: MyColors.myWhite,
-                      fontSize: getHeight(18),
-                      fontWeight: FontWeight.w600,
+          return InkWell(
+            child: HomeContainer(
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    SizedBox(
+                      height: getHeight(89),
+                      width: getWidth(59),
+                      child: Image.asset(index == 0
+                          ? "assets/image/Vector.png"
+                          : "assets/image/lock.png"),
                     ),
-                  ),
-                  Text(
-                    "${tilar['home'][indexT]['nima']}",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: getHeight(12),
-                      color: Colors.grey,
+                    Text(
+                      "${index + 1}-${tilar['home'][indexT]['bolim']}",
+                      style: TextStyle(
+                        color: MyColors.myWhite,
+                        fontSize: getHeight(18),
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
-                  ),
-                ],
+                    Text(
+                      "${tilar['home'][indexT]['nima']}",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: getHeight(12),
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
+            onTap: (){
+              Navigator.pushNamed(context, '/asosiy');
+            },
           );
         },
       ),

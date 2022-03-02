@@ -2,8 +2,6 @@ import 'package:app/model/model.dart';
 import 'package:app/provider/checkbox_provider.dart';
 import 'package:app/provider/login_provider.dart';
 import 'package:app/provider/page_second_provider.dart';
-import 'package:app/provider/photo_provider.dart';
-import 'package:app/provider/til_provider.dart';
 import 'package:app/router/my_router.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -23,11 +21,7 @@ void main() async{
         ChangeNotifierProvider(
           create: (context) => PageParovider(),
         ),
-        ChangeNotifierProvider(
-          create: (context) => TilProvider(),
-        ),
         ChangeNotifierProvider(create: (context) => LoginProvider(),),
-        ChangeNotifierProvider(create: (context) => PhotoProvider(),),
       ],
       child: MyApp(),
     ),
