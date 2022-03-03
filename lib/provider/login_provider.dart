@@ -9,7 +9,7 @@ import '../core/sizeconfige/colors.dart';
 class LoginProvider extends ChangeNotifier{
   late TextEditingController? controller = TextEditingController(text: name);
   Color container = Colors.transparent;
-  Color text = MyColors.myWhite;
+  Color text = Colors.white;
   File picture = File("");
   String til = "O'zbekcha";
   int? index = 0;
@@ -21,14 +21,14 @@ class LoginProvider extends ChangeNotifier{
     final SharedPreferences prefs = await _prefs;
     await prefs.setInt('til', index ?? 0);
     await prefs.setString("name", controller!.text);
-
-    name = prefs.getString("name")?? ""; 
+    name = prefs.getString("name")!; 
     notifyListeners();
   }
    
 
-  nameCha(String ism){
-    name = ism;
+  nameCha()async{
+    final SharedPreferences prefs = await _prefs;
+    name = prefs.getString("name")!; 
     notifyListeners();
 
   }
@@ -44,7 +44,7 @@ class LoginProvider extends ChangeNotifier{
   
   void next(){
     if(controller!.text.length > 2){
-      container = MyColors.myWhite;
+      container = Colors.white;
       text =  MyColors.myBlue;
       notifyListeners();
     } 

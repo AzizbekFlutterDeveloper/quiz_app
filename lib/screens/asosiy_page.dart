@@ -1,7 +1,10 @@
 import 'package:app/core/sizeconfige/colors.dart';
 import 'package:app/core/sizeconfige/size_config.dart';
+import 'package:app/provider/checkbox_provider.dart';
+import 'package:app/widget/showDialog/arrow_dialog.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:simple_timer/simple_timer.dart';
 
 class AsosiyPage extends StatefulWidget {
@@ -24,6 +27,7 @@ class _AsosiyPageState extends State<AsosiyPage>
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
+    var data = context.watch<CheckBoxProvider>();
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -35,7 +39,7 @@ class _AsosiyPageState extends State<AsosiyPage>
               size: getHeight(27),
             ),
             onPressed: () {
-              Navigator.pop(context);
+              ArrowDialog.arrowdialog(context);
             },
           ),
           actions: [
@@ -97,41 +101,52 @@ class _AsosiyPageState extends State<AsosiyPage>
             child: ListView.builder(
               itemCount: 3,
               itemBuilder: (context, index) {
-                return Container(
-                  height: getHeight(80),
-                  width: getWidth(335),
-                  margin: EdgeInsets.symmetric(
-                      horizontal: getWidth(20), vertical: getHeight(7.5)),
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.all(Radius.circular(20)),
-                    color: MyColors.myWhite,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.2),
-                        blurRadius: 4,
-                        offset: const Offset(4, 8), // Shadow position
-                      ),
-                    ],
-                  ),
-                  padding: EdgeInsets.symmetric(horizontal: getWidth(16)),
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        height: getHeight(70),
-                        width: getWidth(220),
-                        child: Center(
-                          child: AutoSizeText("I work as a tour guide for a local tour company.",
-                            style: TextStyle(
-                              fontSize: getHeight(18),
-                              color: MyColors.myBlue,
-                              fontWeight: FontWeight.w400,
+                return InkWell(
+                  child: Container(
+                    height: getHeight(80),
+                    width: getWidth(335),
+                    margin: EdgeInsets.symmetric(
+                        horizontal: getWidth(20), vertical: getHeight(7.5)),
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
+                      color: data.color[index],
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          blurRadius: 4,
+                          offset: const Offset(4, 8), // Shadow position
+                        ),
+                      ],
+                    ),
+                    padding: EdgeInsets.symmetric(horizontal: getWidth(16)),
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          height: getHeight(70),
+                          width: getWidth(220),
+                          child: Center(
+                            child: AutoSizeText("I work as a tour guide for a local tour company.",
+                              style: TextStyle(
+                                fontSize: getHeight(18),
+                                color: data.textColor[index],
+                                fontWeight: FontWeight.w400,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      Icon(Icons.circle,color: Color(0xffDFDFE2), size: getHeight(28),)
-                    ],
+                        data.icon[index],
+                      ],
+                    ),
                   ),
+                  onTap: (){
+                    context.read<CheckBoxProvider>().correctFunction(index);
+                  },
+                  onDoubleTap: (){
+                    context.read<CheckBoxProvider>().wrongFunction(index);
+                  },
+                  onLongPress: (){
+                    context.read<CheckBoxProvider>().finishFunction(index);
+                  },
                 );
               },
             ),

@@ -41,9 +41,15 @@ class ShowDialog {
                         color: MyColors.myBlue,
                       ),
                       controller: context.watch<LoginProvider>().controller,
-                      decoration: const InputDecoration(
+                      decoration:  InputDecoration(
                         border: InputBorder.none,
+                        hintText: "${tilar['sarlavha'][context.watch<LoginProvider>().index]['textForm']}",
+                        hintStyle: TextStyle(color: MyColors.myBlue),
                       ),
+                      onChanged: (v){
+                        Provider.of<LoginProvider>(context, listen: false).addDB();
+                        print("object");
+                      },
                     ),
                   ),
                   InkWell(
