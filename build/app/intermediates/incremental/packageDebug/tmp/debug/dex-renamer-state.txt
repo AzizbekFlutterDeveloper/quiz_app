@@ -1,0 +1,4 @@
+#Wed Jul 20 17:05:27 UZT 2022
+base.0=/home/azizbek/Desktop/shxsiy/quiz_app/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

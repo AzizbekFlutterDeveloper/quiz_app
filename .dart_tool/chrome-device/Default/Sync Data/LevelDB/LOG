@@ -1,3 +1,2 @@
-2022/03/01-14:38:19.672 2714f Reusing MANIFEST /tmp/flutter_tools.OSDLFQ/flutter_tools_chrome_device.XLDLGP/Default/Sync Data/LevelDB/MANIFEST-000001
-2022/03/01-14:38:19.672 2714f Recovering log #3
-2022/03/01-14:38:19.672 2714f Reusing old log /tmp/flutter_tools.OSDLFQ/flutter_tools_chrome_device.XLDLGP/Default/Sync Data/LevelDB/000003.log 
+2022/07/20-17:11:17.515 743a Creating DB /tmp/flutter_tools.FZFVUZ/flutter_tools_chrome_device.EADZTM/Default/Sync Data/LevelDB since it was missing.
+2022/07/20-17:11:17.609 743a Reusing MANIFEST /tmp/flutter_tools.FZFVUZ/flutter_tools_chrome_device.EADZTM/Default/Sync Data/LevelDB/MANIFEST-000001

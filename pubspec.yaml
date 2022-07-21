@@ -30,7 +30,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-  easy_localization:
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -44,6 +43,9 @@ dependencies:
   simple_drawer: ^0.0.11
   image_picker: ^0.7.2+1
   shared_preferences: ^2.0.13
+  easy_localization: ^3.0.1
+  flutter_screenutil: ^5.5.3+2
+  dio: ^4.0.6
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +72,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/image/
+    - assets/lang/
     # - assets/translations/
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,0 +1,19 @@
+{
+    "ism_familiya":"Имя",
+    "sport_boyicha":"Вопросы о спорте",
+    "ozbekcha":"O’zbekcha",
+    "keyingi":"Следующий",
+    "salom":"Привет",
+    "sozlash":"Настройки",
+    "ulashish":"Делиться",
+    "bizhaqimizda":"About",
+    "menu":"Меню",
+    "yordam":"Помощь",
+    "chiqishni_hohlaysizmi":"Вы хотите выйти?",
+    "ha":"Да",
+    "yoq":"Нет",
+    "keyingi_bosqichga_otaolmadingiz":"Вы не смогли перейти на следующий этап!",
+    "siz_keyingi_bosqichga_muofaqiyatli_otingiz":"Вы успешно перешли на следующий этап!",
+    "ta_togri_javob":" это правильный ответ",
+    "ta_notogri_javob": " неправильный ответ"
+}
