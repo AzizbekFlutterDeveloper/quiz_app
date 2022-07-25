@@ -19,7 +19,7 @@ class LangChangeNotifier extends ChangeNotifier{
   ];
   int langIndex = 0;
 
-  String langName = LocaleManeger.instance.getStringValue(PreferenceKeys.LANG)?? "O’zbekcha";
+  String langName = "O’zbekcha";
   
   void changeLang(int i, BuildContext context){
     context.setLocale(langKey[i]);

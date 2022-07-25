@@ -16,4 +16,5 @@ abstract class  LocaleKeys {
   static const String siz_keyingi_bosqichga_muofaqiyatli_otingiz ="siz_keyingi_bosqichga_muofaqiyatli_otingiz";
   static const String ta_togri_javob ="ta_togri_javob";
   static const String ta_notogri_javob = "ta_notogri_javob";
+  static const String bolim = "bolim";
 }
