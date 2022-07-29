@@ -17,16 +17,19 @@ class LangChangeNotifier extends ChangeNotifier{
     const Locale('en',"US"),
     const Locale("ru","RU"),
   ];
-  int langIndex = 0;
-
-  String langName = "O’zbekcha";
+  int langIndex = int.parse(LocaleManeger.instance.getStringValue(PreferenceKeys.LANGINDEX));
+  
+  String langName = LocaleManeger.instance.getStringValue(PreferenceKeys.LANG);
   
   void changeLang(int i, BuildContext context){
-    context.setLocale(langKey[i]);
-    notifyListeners();
     langName = langList[i];
+    langIndex = i;
+    LocaleManeger.instance.setStringValue(PreferenceKeys.LANGINDEX, langIndex.toString());
     LocaleManeger.instance.setStringValue(PreferenceKeys.LANG, langName);
-    
     notifyListeners();
   }
+
+  
+
+ 
 }

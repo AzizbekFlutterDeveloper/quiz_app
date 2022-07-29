@@ -1,10 +1,12 @@
 import 'package:app/core/components/text_style/text_styles.dart';
 import 'package:app/core/constants/color_const/color_const.dart';
+import 'package:app/provider/color_change_notifier.dart';
 import 'package:app/view/quiz_view/_widget/exit_show_dialog.dart';
 import 'package:app/widget/button_container.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class QuizView extends StatelessWidget {
   const QuizView({Key? key}) : super(key: key);
@@ -16,7 +18,7 @@ class QuizView extends StatelessWidget {
         appBar: AppBar(
           leading: GestureDetector(
             child: Icon(Icons.arrow_back_outlined,
-                color: ColorConst.instance.blue, size: 30.sp),
+                color: context.watch<ColorChangeNotifier>().colorP, size: 30.sp),
             onTap: () {
               ExitShowDialog.init(context);
             },
@@ -29,7 +31,7 @@ class QuizView extends StatelessWidget {
               child: Text(
                 "5/50",
                 style: TextStyleComp.style500(
-                    color: ColorConst.instance.blue, size: 22),
+                    color: context.watch<ColorChangeNotifier>().colorP, size: 22),
               ),
             )
           ],
@@ -44,7 +46,7 @@ class QuizView extends StatelessWidget {
                   child: AutoSizeText(
                     "Let us know how we can help you",
                     style: TextStyleComp.style600(
-                      color: ColorConst.instance.blue,
+                      color: context.watch<ColorChangeNotifier>().colorP,
                       size: 22,
                     ),
                   ),
@@ -83,7 +85,7 @@ class QuizView extends StatelessWidget {
               ),
               SizedBox(height: 70.h),
               ButtonContainer(
-                color: ColorConst.instance.blue,
+                color: context.watch<ColorChangeNotifier>().colorP,
               ),
             ],
           ),

@@ -18,6 +18,9 @@ INJECTED from /home/azizbek/Desktop/shxsiy/quiz_app/android/app/src/main/Android
 INJECTED from /home/azizbek/Desktop/shxsiy/quiz_app/android/app/src/main/AndroidManifest.xml:1:1-34:12
 MERGED from /home/azizbek/Desktop/shxsiy/quiz_app/android/app/src/main/AndroidManifest.xml:1:1-34:12
 MERGED from [:shared_preferences_android] /home/azizbek/Desktop/shxsiy/quiz_app/build/shared_preferences_android/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_share] /home/azizbek/Desktop/shxsiy/quiz_app/build/flutter_share/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:path_provider_android] /home/azizbek/Desktop/shxsiy/quiz_app/build/path_provider_android/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:screen_brightness_android] /home/azizbek/Desktop/shxsiy/quiz_app/build/screen_brightness_android/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] /home/azizbek/.gradle/caches/transforms-2/files-2.1/ad201fac15a88598107ec645f351f5b4/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] /home/azizbek/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.fragment:fragment:1.1.0] /home/azizbek/.gradle/caches/transforms-2/files-2.1/8601dd65e0c6893d5abc5ccde1e2cab3/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -31,8 +34,8 @@ MERGED from [androidx.savedstate:savedstate:1.0.0] /home/azizbek/.gradle/caches/
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/azizbek/.gradle/caches/transforms-2/files-2.1/8108bc8c5f35a568f919dbab3be0e175/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/azizbek/.gradle/caches/transforms-2/files-2.1/403e5322101e882ebd13d146c86f92ca/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.tracing:tracing:1.0.0] /home/azizbek/.gradle/caches/transforms-2/files-2.1/6c6575c923e75933616af1a602db32e0/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/azizbek/.gradle/caches/transforms-2/files-2.1/c8d7e3b2963d9fc9e8f1cf9aeb870fb3/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/azizbek/.gradle/caches/transforms-2/files-2.1/884708a9396f81808c0ac10f4b98ea32/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/azizbek/.gradle/caches/transforms-2/files-2.1/c8d7e3b2963d9fc9e8f1cf9aeb870fb3/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/azizbek/.gradle/caches/transforms-2/files-2.1/9a0e475eb211916dfa0da9de1d6c02a3/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/azizbek/.gradle/caches/transforms-2/files-2.1/5bfc0955e244073bdc8cc139cda5e092/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
 INJECTED from /home/azizbek/Desktop/shxsiy/quiz_app/android/app/src/debug/AndroidManifest.xml:1:1-7:12
@@ -58,6 +61,12 @@ INJECTED from /home/azizbek/Desktop/shxsiy/quiz_app/android/app/src/main/Android
 INJECTED from /home/azizbek/Desktop/shxsiy/quiz_app/android/app/src/main/AndroidManifest.xml
 MERGED from [:shared_preferences_android] /home/azizbek/Desktop/shxsiy/quiz_app/build/shared_preferences_android/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences_android] /home/azizbek/Desktop/shxsiy/quiz_app/build/shared_preferences_android/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_share] /home/azizbek/Desktop/shxsiy/quiz_app/build/flutter_share/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_share] /home/azizbek/Desktop/shxsiy/quiz_app/build/flutter_share/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider_android] /home/azizbek/Desktop/shxsiy/quiz_app/build/path_provider_android/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider_android] /home/azizbek/Desktop/shxsiy/quiz_app/build/path_provider_android/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:screen_brightness_android] /home/azizbek/Desktop/shxsiy/quiz_app/build/screen_brightness_android/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:screen_brightness_android] /home/azizbek/Desktop/shxsiy/quiz_app/build/screen_brightness_android/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [androidx.window:window-java:1.0.0-beta04] /home/azizbek/.gradle/caches/transforms-2/files-2.1/ad201fac15a88598107ec645f351f5b4/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] /home/azizbek/.gradle/caches/transforms-2/files-2.1/ad201fac15a88598107ec645f351f5b4/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window:1.0.0-beta04] /home/azizbek/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
@@ -84,10 +93,10 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/azizbek/.gr
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/azizbek/.gradle/caches/transforms-2/files-2.1/403e5322101e882ebd13d146c86f92ca/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.tracing:tracing:1.0.0] /home/azizbek/.gradle/caches/transforms-2/files-2.1/6c6575c923e75933616af1a602db32e0/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] /home/azizbek/.gradle/caches/transforms-2/files-2.1/6c6575c923e75933616af1a602db32e0/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/azizbek/.gradle/caches/transforms-2/files-2.1/c8d7e3b2963d9fc9e8f1cf9aeb870fb3/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/azizbek/.gradle/caches/transforms-2/files-2.1/c8d7e3b2963d9fc9e8f1cf9aeb870fb3/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/azizbek/.gradle/caches/transforms-2/files-2.1/884708a9396f81808c0ac10f4b98ea32/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/azizbek/.gradle/caches/transforms-2/files-2.1/884708a9396f81808c0ac10f4b98ea32/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/azizbek/.gradle/caches/transforms-2/files-2.1/c8d7e3b2963d9fc9e8f1cf9aeb870fb3/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/azizbek/.gradle/caches/transforms-2/files-2.1/c8d7e3b2963d9fc9e8f1cf9aeb870fb3/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/azizbek/.gradle/caches/transforms-2/files-2.1/9a0e475eb211916dfa0da9de1d6c02a3/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/azizbek/.gradle/caches/transforms-2/files-2.1/9a0e475eb211916dfa0da9de1d6c02a3/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/azizbek/.gradle/caches/transforms-2/files-2.1/5bfc0955e244073bdc8cc139cda5e092/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41

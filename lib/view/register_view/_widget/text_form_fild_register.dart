@@ -14,10 +14,13 @@ class RegisterTextFormField extends StatelessWidget {
     return TextFormField(
       cursorColor: ColorConst.instance.white,
       style: TextStyleComp.style400(),
+      maxLength: 20,
       onChanged: onChanged,
+      
       controller: controller,
       decoration: InputDecoration(
         hintText: hintText,
+        counterStyle: TextStyleComp.style400(size: 13),
         hintStyle: TextStyleComp.style400(color: ColorConst.instance.white.withOpacity(0.7)),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20.r),

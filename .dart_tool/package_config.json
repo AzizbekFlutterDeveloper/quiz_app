@@ -20,6 +20,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "badges",
+      "rootUri": "file:///home/azizbek/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "blurrycontainer",
       "rootUri": "file:///home/azizbek/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/blurrycontainer-1.0.2",
       "packageUri": "lib/",
@@ -116,6 +122,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_share",
+      "rootUri": "file:///home/azizbek/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_share-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_svg",
       "rootUri": "file:///home/azizbek/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-1.1.1+1",
       "packageUri": "lib/",
@@ -132,6 +144,18 @@
       "rootUri": "file:///home/azizbek/Documents/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "2.17"
+    },
+    {
+      "name": "get",
+      "rootUri": "file:///home/azizbek/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/get-4.6.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "get_storage",
+      "rootUri": "file:///home/azizbek/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/get_storage-2.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "intl",
@@ -194,8 +218,32 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "path_provider",
+      "rootUri": "file:///home/azizbek/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.11",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "path_provider_android",
+      "rootUri": "file:///home/azizbek/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_android-2.0.16",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "path_provider_ios",
+      "rootUri": "file:///home/azizbek/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_ios-2.0.10",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
       "name": "path_provider_linux",
       "rootUri": "file:///home/azizbek/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "path_provider_macos",
+      "rootUri": "file:///home/azizbek/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-2.0.6",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -244,6 +292,36 @@
     {
       "name": "provider",
       "rootUri": "file:///home/azizbek/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "screen_brightness",
+      "rootUri": "file:///home/azizbek/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/screen_brightness-0.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "screen_brightness_android",
+      "rootUri": "file:///home/azizbek/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/screen_brightness_android-0.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "screen_brightness_ios",
+      "rootUri": "file:///home/azizbek/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/screen_brightness_ios-0.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "screen_brightness_macos",
+      "rootUri": "file:///home/azizbek/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/screen_brightness_macos-0.1.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "screen_brightness_platform_interface",
+      "rootUri": "file:///home/azizbek/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/screen_brightness_platform_interface-0.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -374,7 +452,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-07-21T12:12:30.451779Z",
+  "generated": "2022-07-28T12:06:32.125470Z",
   "generator": "pub",
   "generatorVersion": "2.17.6"
 }

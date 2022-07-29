@@ -1,10 +1,11 @@
 import 'package:app/core/components/text_style/text_styles.dart';
-import 'package:app/core/constants/color_const/color_const.dart';
 import 'package:app/core/constants/navigation_const/navigation_const.dart';
 import 'package:app/core/extension/string_extension_locale.dart';
 import 'package:app/core/init/lang/lang_keys.g.dart';
+import 'package:app/provider/color_change_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class BodyWidget extends StatelessWidget {
   const BodyWidget({Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class BodyWidget extends StatelessWidget {
             padding: EdgeInsets.all(20.w),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30.r),
-              color: ColorConst.instance.blue,
+              color: context.watch<ColorChangeNotifier>().colorP,
               boxShadow: [
                 BoxShadow(
                   offset: const Offset(0,10),

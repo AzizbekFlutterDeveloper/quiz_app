@@ -1,25 +1,26 @@
 import 'package:app/core/constants/enum/locale_keys_enum.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LocaleManeger {
   static final LocaleManeger _instance = LocaleManeger._init();
-  SharedPreferences? _preferences;
+  GetStorage? _preferences;
   static LocaleManeger get instance => _instance;
   
   LocaleManeger._init() {
-    SharedPreferences.getInstance().then((value) {
-      _preferences = value;
-    });
+    _preferences = GetStorage();
   }
 
-  static preferenceInit() async {
-    instance._preferences ??= await SharedPreferences.getInstance();
+  static preferenceInit() async{
+    await GetStorage.init();
   }
 
   Future<void> setStringValue(PreferenceKeys key, String value) async {
-    await _preferences!.setString(key.toString(), value);
+    await GetStorage().write(key.toString(), value);
   }
+  
+  
 
-  String? getStringValue(PreferenceKeys key) =>
-      _preferences!.getString(key.toString()) ?? "";
+  String getStringValue(PreferenceKeys key) =>
+      GetStorage().read(key.toString());
 }

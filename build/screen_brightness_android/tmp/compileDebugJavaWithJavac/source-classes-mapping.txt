@@ -1,0 +1,2 @@
+com/aaassseee/screen_brightness_android/BuildConfig.java
+ com.aaassseee.screen_brightness_android.BuildConfig

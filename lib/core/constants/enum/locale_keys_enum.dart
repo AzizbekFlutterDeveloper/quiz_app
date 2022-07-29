@@ -1,1 +1,1 @@
-enum PreferenceKeys { LANG }
+enum PreferenceKeys { LANG, IMG, LANGINDEX, NAME, DATE }
