@@ -6,7 +6,7 @@ class Bolim2 {
     "Bestimmen Sie die Schwierigkeitsgruppe eines Elements? ",
     "Determine the difficulty group of an element? ",
   ];
-  List quiz = [
+  static List quiz = [
     {
       "id": 1,
       "savollar": [

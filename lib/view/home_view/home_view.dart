@@ -2,12 +2,14 @@ import 'package:app/core/components/text_style/text_styles.dart';
 import 'package:app/core/constants/color_const/color_const.dart';
 import 'package:app/core/constants/enum/locale_keys_enum.dart';
 import 'package:app/core/constants/navigation_const/navigation_const.dart';
+import 'package:app/core/data/1_bolim/bolim_1_list_data.dart';
 import 'package:app/core/extension/string_extension_locale.dart';
 import 'package:app/core/init/cache/locale_manger.dart';
 import 'package:app/core/init/lang/lang_keys.g.dart';
 import 'package:app/provider/color_change_notifier.dart';
 import 'package:app/provider/image_change_notifier.dart';
 import 'package:app/provider/name_change_notifier.dart';
+import 'package:app/service/test_service.dart';
 import 'package:app/view/home_view/_widget/body_widget.dart';
 import 'package:app/view/home_view/_widget/drawer_widget.dart';
 import 'package:app/view/home_view/_widget/show_dialog.dart';
@@ -68,7 +70,8 @@ class HomeView extends StatelessWidget {
                       ),
                     ),
                     onTap: (){
-                      Navigator.pushNamed(context, NavigationConst.PROFILE_VIEW);
+                      print("object");
+                      Navigator.pushNamed(context, NavigationConst.PROFILE_VIEW,);
                     },
                   ),
                 ],

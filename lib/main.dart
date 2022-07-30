@@ -1,3 +1,4 @@
+
 import 'package:app/core/constants/enum/locale_keys_enum.dart';
 import 'package:app/core/constants/navigation_const/navigation_const.dart';
 import 'package:app/core/init/cache/locale_manger.dart';
@@ -30,8 +31,21 @@ void main() async{
 }
 
 _init()async{
-  if(preferences.read("img") == null){
-    preferences.write("img", "true");
+  if(preferences.read("key") == null){
+    preferences.write("key", "true");
+    LocaleManeger.instance.setStringValue(PreferenceKeys.QUIZBOLIM1, "0");
+    LocaleManeger.instance.setStringValue(PreferenceKeys.QUIZBOLIM2, "0");
+    LocaleManeger.instance.setStringValue(PreferenceKeys.QUIZBOLIM3, "0");
+    LocaleManeger.instance.setStringValue(PreferenceKeys.QUIZBOLIM4, "0");
+    LocaleManeger.instance.setStringValue(PreferenceKeys.QUIZBOLIM5, "0");
+
+    LocaleManeger.instance.setStringValue(PreferenceKeys.QUIZTOGRI1, "0");
+    LocaleManeger.instance.setStringValue(PreferenceKeys.QUIZTOGRI2, "0");
+    LocaleManeger.instance.setStringValue(PreferenceKeys.QUIZTOGRI3, "0");
+    LocaleManeger.instance.setStringValue(PreferenceKeys.QUIZTOGRI4, "0");
+    LocaleManeger.instance.setStringValue(PreferenceKeys.QUIZTOGRI5, "0");
+
+    LocaleManeger.instance.setStringValue(PreferenceKeys.COLOR,"0");
     LocaleManeger.instance.setStringValue(PreferenceKeys.LANG,"O'zbekcha");
     LocaleManeger.instance.setStringValue(PreferenceKeys.IMG, "assets/image/profile1.jpg");
     LocaleManeger.instance.setStringValue(PreferenceKeys.LANGINDEX, "0");
@@ -53,8 +67,8 @@ class MyApp extends StatelessWidget {
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,
-          initialRoute: NavigationConst.REGISTER_VIEW,
-          // initialRoute: preferences.read(PreferenceKeys.NAME.toString()) == null ? NavigationConst.REGISTER_VIEW : NavigationConst.HOME_VIEW,
+          // initialRoute: NavigationConst.REGISTER_VIEW,
+          initialRoute: preferences.read(PreferenceKeys.NAME.toString()) == null ? NavigationConst.REGISTER_VIEW : NavigationConst.HOME_VIEW,
           onGenerateRoute: Routes.instance.onGenerateRoute,
         );
       },

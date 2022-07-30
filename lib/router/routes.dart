@@ -1,4 +1,5 @@
 import 'package:app/core/constants/navigation_const/navigation_const.dart';
+import 'package:app/model/quiz_model.dart';
 import 'package:app/view/home_view/home_view.dart';
 import 'package:app/view/not_view/not_view.dart';
 import 'package:app/view/quiz_view/quiz_view.dart';
@@ -24,7 +25,7 @@ class Routes {
       case NavigationConst.PROFILE_VIEW:
         return simpleRoute(const SettingsView());
       case NavigationConst.QUIZ_VIEW:
-        return simpleRoute(const QuizView());
+        return simpleRoute( QuizView(data: args as List<QuizModel>,));
       default:
         return simpleRoute(const NotView());
     }

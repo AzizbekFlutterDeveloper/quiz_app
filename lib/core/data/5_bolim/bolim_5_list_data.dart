@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 class Bolim5 {
-  List quiz = [
+  static List quiz = [
     {
       "id": 1,
       "savollar": [],

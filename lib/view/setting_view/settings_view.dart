@@ -125,6 +125,7 @@ class SettingsView extends StatelessWidget {
                       ),
                       onTap: (){
                         if(i == 0){
+                          context.read<NameChangeNotifier>().addController();
                           ProfileEditShowModelSheet.init(context);
                         }else{
                           Serviceshare.share();
